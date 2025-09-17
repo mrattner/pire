@@ -1,11 +1,11 @@
-import js from '@eslint/js'
+import js from '@eslint/js';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
-import globals from 'globals'
+import globals from 'globals';
 import eslintImport from 'eslint-plugin-import';
 import eslintReact from '@eslint-react/eslint-plugin';
-import reactRefresh from 'eslint-plugin-react-refresh'
-import tseslint from 'typescript-eslint'
-import { globalIgnores } from 'eslint/config'
+import reactRefresh from 'eslint-plugin-react-refresh';
+import tseslint from 'typescript-eslint';
+import { globalIgnores } from 'eslint/config';
 import eslintConfigPrettier from 'eslint-config-prettier/flat';
 
 export default tseslint.config([
@@ -34,4 +34,4 @@ export default tseslint.config([
     },
   },
   eslintConfigPrettier,
-])
+]);
