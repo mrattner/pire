@@ -1,0 +1,9 @@
+{
+    "project_name": "Pire",
+    "package_name": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
+    "project_description": "I don't do a whole lot yet.",
+    "use_bulma_with_sass": "n",
+    "add_tests": "n",
+    "use_rtk_query": "y",
+    "repository": "https://github.com/mrattner/{{ cookiecutter.package_name }}.git"
+}
