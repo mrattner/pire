@@ -24,6 +24,11 @@ The following ESLint plugins are included:
   statements
 - [`eslint-plugin-jsx-a11y`][eslinta11y] - Rules for accessibility in JSX
   components
+{%- if cookiecutter.add_tests|lower == "y" %}
+- [`@vitest/eslint-plugin`][eslintvitest] and
+  [`eslint-plugin-testing-library`][eslintrtl] - Rules for proper usage of
+  Vitest and React Testing Library
+{%- endif %}
 
 [`eslint-config-prettier`][eslintpretty] is also included to turn off ESLint
 rules that could conflict with Prettier. (Formatting is a different concern from
@@ -33,6 +38,14 @@ Vite is primarily a bundler, not a file watcher. There are plugins for hooking
 tools such as ESLint and stylelint into the auto-refreshing dev server, but you
 should be using editor integration or an external filewatcher instead for such
 tasks, in combination with the `format` and `lint` NPM scripts.
+{%- if cookiecutter.add_tests|lower == "y" %}
+
+### Running tests
+
+Testing the components is done via [React Testing Library][rtl]. See [Vitest's
+documentation][vitestdocs] and an [example][vitestrtl] of how to use
+Vitest with React Testing Library.
+{%- endif %}
 
 ## Components and styles
 
@@ -50,3 +63,10 @@ to your semantic HTML elements to apply Bulma's themed element styles & layout.
 [eslinta11y]: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y?tab=readme-ov-file#supported-rules
 [eslintpretty]: https://github.com/prettier/eslint-config-prettier?tab=readme-ov-file#eslintconfigjs-flat-config-plugin-caveat
 [bulma]: https://bulma.io/documentation/elements/
+{%- if cookiecutter.add_tests|lower == "y" %}
+[eslintvitest]: https://github.com/vitest-dev/eslint-plugin-vitest?tab=readme-ov-file#rules
+[eslintrtl]: https://github.com/testing-library/eslint-plugin-testing-library?tab=readme-ov-file#supported-rules
+[rtl]: https://testing-library.com/docs/ecosystem-jest-dom/
+[vitestdocs]: https://vitest.dev/api/
+[vitestrtl]: https://www.robinwieruch.de/vitest-react-testing-library/
+{%- endif %}
