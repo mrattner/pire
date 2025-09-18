@@ -5,3 +5,6 @@ if __name__ == "__main__":
 
     if "{{ cookiecutter.add_tests }}" != "y":
         os.rmdir(os.path.join(PROJECT_DIRECTORY, "test"))
+
+    if "{{ cookiecutter.use_bulma_with_sass }}" != "y":
+        os.rmdir(os.path.join(PROJECT_DIRECTORY, "resources", "scss"))

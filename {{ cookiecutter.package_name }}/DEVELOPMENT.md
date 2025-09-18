@@ -51,6 +51,12 @@ Vitest with React Testing Library.
 
 The design framework for the app is [Bulma][bulma]. Add the appropriate classes
 to your semantic HTML elements to apply Bulma's themed element styles & layout.
+{%- if cookiecutter.use_bulma_with_sass|lower == "y" %}
+To customize the styling, modify the Sass files in the `public/styles` folder.
+See [Bulma customization][bsass] for details.
+
+Vite will compile the Sass to CSS as part of its build process.
+{%- endif %}
 
 [viteconfig]: https://vite.dev/config/
 [vite]: https://vite.dev/guide/features
@@ -63,6 +69,9 @@ to your semantic HTML elements to apply Bulma's themed element styles & layout.
 [eslinta11y]: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y?tab=readme-ov-file#supported-rules
 [eslintpretty]: https://github.com/prettier/eslint-config-prettier?tab=readme-ov-file#eslintconfigjs-flat-config-plugin-caveat
 [bulma]: https://bulma.io/documentation/elements/
+{%- if cookiecutter.use_bulma_with_sass|lower == "y" %}
+[bsass]: https://bulma.io/documentation/customize/with-sass/
+{%- endif %}
 {%- if cookiecutter.add_tests|lower == "y" %}
 [eslintvitest]: https://github.com/vitest-dev/eslint-plugin-vitest?tab=readme-ov-file#rules
 [eslintrtl]: https://github.com/testing-library/eslint-plugin-testing-library?tab=readme-ov-file#supported-rules
