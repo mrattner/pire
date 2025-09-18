@@ -50,6 +50,9 @@
 {%- if cookiecutter.add_tests|lower == "y" %}
     "jsdom": "^27.0.0",
 {%- endif %}
+{%- if cookiecutter.use_rtk_query|lower == "y" %}
+    "openapi-typescript": "^7.9.1",
+{%- endif %}
     "prettier": "^3.6.2",
 {%- if cookiecutter.use_bulma_with_sass|lower == "y" %}
     "sass": "^1.92.1",

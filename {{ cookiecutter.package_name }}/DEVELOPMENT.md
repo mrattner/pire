@@ -57,6 +57,15 @@ See [Bulma customization][bsass] for details.
 
 Vite will compile the Sass to CSS as part of its build process.
 {%- endif %}
+{%- if cookiecutter.use_rtk_query|lower == "y" %}
+
+## API integration
+
+Integration with your backend API is via React Toolkit's [RTK-Query][rtk], using
+auto-generated interfaces with the [openapi-typescript][oapi] CLI tool. Input
+your OpenAPI specification
+Recommended format for your backend API objects is based on [JSON:API][jsonapi].
+{%- endif %}
 
 [viteconfig]: https://vite.dev/config/
 [vite]: https://vite.dev/guide/features
@@ -78,4 +87,9 @@ Vite will compile the Sass to CSS as part of its build process.
 [rtl]: https://testing-library.com/docs/ecosystem-jest-dom/
 [vitestdocs]: https://vitest.dev/api/
 [vitestrtl]: https://www.robinwieruch.de/vitest-react-testing-library/
+{%- endif %}
+{%- if cookiecutter.use_rtk_query|lower == "y" %}
+[rtk]: https://redux-toolkit.js.org/rtk-query/overview
+[oapi]: https://www.npmjs.com/package/openapi-typescript
+[jsonapi]: https://jsonapi.org/
 {%- endif %}

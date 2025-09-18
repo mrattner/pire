@@ -8,3 +8,6 @@ if __name__ == "__main__":
 
     if "{{ cookiecutter.use_bulma_with_sass }}" != "y":
         os.rmdir(os.path.join(PROJECT_DIRECTORY, "resources", "scss"))
+
+    if "{{ cookiecutter.use_rtk_query }}" != "y":
+        os.remove(os.path.join(PROJECT_DIRECTORY, "src", "api.ts"))
